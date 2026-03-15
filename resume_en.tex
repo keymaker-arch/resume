@@ -1,0 +1,240 @@
+% !TeX TS-program = xelatex
+\documentclass[11pt, a4paper]{article}
+
+% ── Geometry ──
+\usepackage[
+  top=0.6in,
+  bottom=0.6in,
+  left=0.7in,
+  right=0.7in
+]{geometry}
+
+% ── Fonts (Latin) ──
+\usepackage{fontspec}
+% Use Computer Modern (default) for Latin text; override if you prefer:
+% \setmainfont{TeX Gyre Termes}
+
+% ── Packages ──
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% ── Colors ──
+\definecolor{linkblue}{HTML}{0563C1}
+\definecolor{sectioncolor}{HTML}{000000}
+\definecolor{rulecolor}{HTML}{333333}
+
+% ── Hyperlinks ──
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue,
+  pdfauthor={Tianshuo Han},
+  pdftitle={Tianshuo Han - Resume},
+}
+
+% ── No page numbers ──
+\pagestyle{empty}
+
+% ── Section style: bold with underline ──
+\titleformat{\section}
+  {\large\bfseries\color{sectioncolor}}
+  {}{0em}{}
+  [\vspace{-0.6em}\textcolor{rulecolor}{\rule{\textwidth}{0.8pt}}]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% ── List style ──
+\setlist[itemize]{
+  leftmargin=1.5em,
+  itemsep=1pt,
+  parsep=0pt,
+  topsep=2pt,
+}
+
+% ── Helper commands ──
+
+% Resume entry: \resumeentry{Title}{Date}
+\newcommand{\resumeentry}[2]{%
+  \noindent\textbf{#1}\hfill{#2}\par
+}
+
+% Resume sub-entry: \resumesub{Subtitle}
+\newcommand{\resumesub}[1]{%
+  \noindent{#1}\par\vspace{2pt}
+}
+
+% Publication entry: \pub{Title}{Authors}{Venue}
+\newcommand{\pub}[3]{%
+  \noindent\textbf{#1}\par
+  \noindent{#2}\par
+  \noindent{#3}\par\vspace{2pt}
+}
+
+% ── Reduce spacing ──
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ══════════════════════════════════════════
+\begin{document}
+
+% ── Header ──
+\begin{center}
+  {\LARGE\bfseries Tianshuo Han}\\[6pt]
+  (+86)\,173-3953-9195 \enspace$\mid$\enspace
+  \href{mailto:hantianshuo@iie.ac.cn}{hantianshuo@iie.ac.cn} \enspace$\mid$\enspace
+  \href{https://github.com/keymaker-arch}{github.com/keymaker-arch}
+\end{center}
+
+\vspace{-2pt}
+
+% ── Education ──
+\section{Education}
+
+\resumeentry{University of Chinese Academy of Sciences \enspace|\enspace Ph.D. Candidate}{Sep 2021 --- Jan 2027 (Expected)}
+\resumesub{Cyberspace Security, Institute of Information Engineering \enspace|\enspace Direct Ph.D. Program}
+
+Focused on \textbf{Linux kernel security} research, with solid theoretical foundation and extensive hands-on experience in binary security, kernel vulnerability discovery and exploitation. Research published at top-tier security conferences including USENIX Security and CCS.
+
+\vspace{8pt}
+
+\resumeentry{China Agricultural University \enspace|\enspace Undergraduate}{Sep 2017 --- Jun 2021}
+\resumesub{Biological Sciences, College of Life Sciences \enspace|\enspace Bachelor of Science}
+
+Outstanding academic performance with multiple academic scholarships. Awarded National Second Prize in the China Undergraduate Mathematical Contest in Modeling and Gold Medal in the iGEM (International Genetically Engineered Machine) Competition.
+
+% ── Publications ──
+\section{Publications}
+
+\pub{CARDSHARK: Understanding and Stabilizing Linux Kernel Concurrency Bugs Against the Odds}
+{\textbf{Tianshuo Han}, Xiaorui Gong, and Jian Liu}
+{33rd USENIX Security Symposium, 2024, CCF-A}
+
+\begin{itemize}
+  \item \textbf{Conducted the first in-depth analysis of the root causes of instability in triggering kernel race condition vulnerabilities, and proposed a general-purpose exploitation technique that significantly improves the success rate and stability of kernel race condition exploitation.}
+  \item Independently completed the mechanism analysis of kernel race vulnerabilities, exploitation technique development, and performance evaluation. Led the paper writing effort.
+\end{itemize}
+
+\vspace{6pt}
+
+\pub{Reviving Discarded Vulnerabilities: Exploiting Previously Unexploitable Linux Kernel Bugs Through Control Metadata Fields}
+{Hao Zhang, Jie Lu, Shaomin Chen, \textbf{Tianshuo Han}, Bolun Zhang, Jian Liu, Xiaorui Gong}
+{32nd ACM CCS, 2025, CCF-A}
+
+\begin{itemize}
+  \item \textbf{Proposed a novel exploitation technique based on manipulating critical metadata fields in kernel structures, effectively enhancing exploitation capabilities with weak vulnerability primitives and expanding the scope of exploitable kernel vulnerabilities.}
+  \item Deeply involved in defining the core thesis and responding to reviewer comments. Participated in evaluation experiment design and CodeQL code development.
+\end{itemize}
+
+\vspace{6pt}
+
+\pub{Whole-genome sequence and comparative analysis of Trichoderma asperellum ND-1 reveal its unique enzymatic system for efficient biomass degradation}
+{Fengzhen Zheng, \textbf{Tianshuo Han}, Abdul Basit, Junquan Liu, Ting Miao, and Wei Jiang}
+{Catalysts 12(4), 2022, IF=4.16}
+
+\begin{itemize}
+  \item \textbf{Revealed the unique lignocellulose degradation enzyme system of Trichoderma asperellum ND-1 through whole-genome sequencing and secretome analysis, providing a genomic theoretical foundation for efficient biomass conversion.}
+  \item Responsible for in-depth genomic data analysis and scientific data visualization.
+\end{itemize}
+
+% ── Key Projects ──
+\section{Key Projects}
+
+\resumeentry{NetPanic --- A Novel Fuzzing Framework for Kernel Network Stack}{Nov 2023 - Present}
+
+\begin{itemize}
+  \item Designed a novel architecture distinct from Syzkaller, specifically optimized for kernel network stack fuzzing.
+  \item Built on the LibAFL framework with deep customization, reimplementing core components including mutation, execution, feedback, and scheduling.
+  \item Independently completed the overall architecture design and implementation, totaling 40K+ lines of code (Rust + C).
+  \item Deep understanding of fuzzer design principles with proficiency in LibAFL framework internals.
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeentry{Linux Kernel Rootkit Development}{Dec 2023 - May 2024}
+
+\begin{itemize}
+  \item Independently designed and implemented a full-featured Linux kernel rootkit, covering self-hiding, port hiding, privilege escalation, file/process hiding, and persistence across reboots.
+  \item Core design philosophy: \textbf{lightweight architecture} and \textbf{high stealth}, achieving complete functionality with minimal code while evading mainstream rootkit detection techniques.
+  \item \textbf{Broad compatibility}: supports all Linux kernel versions from 2.6 to 6.3.
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeentry{Automated sprintf() Vulnerability Discovery in the Linux Kernel}{Oct 2022 - Jan 2023}
+
+\begin{itemize}
+  \item Systematically discovered buffer overflow vulnerabilities in the Linux kernel caused by insufficient buffer length reservation in \texttt{sprintf()} function calls using static analysis.
+  \item Implemented automated analysis tooling based on the \textbf{LLVM} framework, identifying 100+ potential overflow sites.
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeentry{Shadow Brokers Leaked Hacking Tools --- In-depth Reverse Engineering}{Jan 2022 - May 2022}
+
+\begin{itemize}
+  \item Conducted in-depth analysis of exploit tools including EARLYSHOVEL, ELECTRICSLIDE, EVENLESSON, and TELEX.
+  \item Reverse-engineered backdoor tools NOPEN and STOICSURGEON, and developed corresponding detection tools.
+\end{itemize}
+
+% ── Security Contributions ──
+\section{Security Contributions}
+
+\resumeentry{CVE-2025-38501 \enspace|\enspace Linux Kernel KSMBD Remote DoS}{Aug 2025}
+
+\begin{itemize}
+  \item Discovered a design flaw in the Linux kernel KSMBD module when handling abnormal TCP connections, allowing remote attackers to exhaust the connection pool via TCP handshakes, rendering the service unavailable.
+  \item Completed root cause analysis, PoC development, and assisted with the fix.
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeentry{CVE-2025-38089 \enspace|\enspace Linux Kernel Remote DoS}{Jun 2025}
+
+\begin{itemize}
+  \item Discovered a null pointer dereference vulnerability in the Linux NFS server when processing maliciously crafted packets, enabling remote kernel crashes.
+  \item Conducted vulnerability mechanism analysis, PoC construction, and participated in the patching process.
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeentry{1a4e58cce84e}{Sep 2022}
+
+\begin{itemize}
+  \item Fixed a warning triggered in the Linux kernel memory management subsystem when the \texttt{madvise()} system call with the \texttt{MADV\_PAGEOUT} flag processes a non-LRU page.
+  \item Participated in patch development, testing, and verification.
+\end{itemize}
+
+% ── Teaching Experience ──
+\section{Teaching Experience}
+
+\resumeentry{Teaching Assistant --- Malware Discovery and Analysis}{Sep 2023 - Feb 2024}
+\resumesub{School of Cyberspace Security, University of Chinese Academy of Sciences}
+
+\begin{itemize}
+  \item Served as teaching assistant for a graduate-level course covering dynamic and static program analysis techniques for malware detection and analysis on Windows systems.
+  \item Responsible for Q\&A sessions, lab assignment grading, and exam question preparation.
+  \item Helped students master core malware analysis techniques and develop practical hands-on skills.
+\end{itemize}
+
+% ── Technical Skills ──
+\section{Technical Skills}
+
+\begin{itemize}
+  \item \textbf{Programming Languages}: Expert in \textbf{C}; proficient in \textbf{Rust}, Python, Shell, \LaTeX{}; familiar with C++, Golang, Matlab, R
+  \item \textbf{Fuzzing}: Deep expertise in LibAFL framework; familiar with AFL++, Syzkaller, and other mainstream fuzzing tools
+  \item \textbf{Professional Skills}: Experienced in Linux kernel exploitation techniques; proficient in binary reverse engineering and exploitation; skilled with Shell, Vim, Git, GDB, IDA, and other development and security analysis tools
+\end{itemize}
+
+% ── Personal Qualities ──
+\section{Personal Qualities}
+
+\begin{itemize}
+  \item Deep theoretical foundation and extensive engineering experience in Linux kernel security, with strong technical innovation capabilities.
+  \item Highly self-motivated with excellent execution, passionate about technology and innovation, with outstanding communication and teamwork skills.
+  \item Healthy lifestyle with high energy levels, maintaining a consistent fitness routine for years.
+  \item Near-native English proficiency, capable of fluently reading and writing technical documentation in English.
+\end{itemize}
+
+\end{document}
