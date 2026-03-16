@@ -1,0 +1,145 @@
+% !TeX TS-program = xelatex
+\documentclass[10pt, a4paper]{article}
+
+% ── Geometry ──
+\usepackage[
+  top=0.4in,
+  bottom=0.4in,
+  left=0.6in,
+  right=0.6in
+]{geometry}
+
+% ── Fonts (Latin) ──
+\usepackage{fontspec}
+
+% ── Packages ──
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% ── Colors ──
+\definecolor{linkblue}{HTML}{0563C1}
+\definecolor{sectioncolor}{HTML}{000000}
+\definecolor{rulecolor}{HTML}{333333}
+
+% ── Hyperlinks ──
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue,
+  pdfauthor={Tianshuo Han},
+  pdftitle={Tianshuo Han - Resume},
+}
+
+% ── No page numbers ──
+\pagestyle{empty}
+
+% ── Section style: bold with underline ──
+\titleformat{\section}
+  {\normalsize\bfseries\color{sectioncolor}}
+  {}{0em}{}
+  [\vspace{-0.6em}\textcolor{rulecolor}{\rule{\textwidth}{0.8pt}}]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% ── List style ──
+\setlist[itemize]{
+  leftmargin=1.5em,
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=1pt,
+}
+
+% ── Helper commands ──
+
+\newcommand{\resumeentry}[2]{%
+  \noindent\textbf{#1}\hfill{#2}\par
+}
+
+\newcommand{\resumesub}[1]{%
+  \noindent{#1}\par\vspace{1pt}
+}
+
+\newcommand{\pub}[3]{%
+  \noindent\textbf{#1}\par
+  \noindent{#2}\par
+  \noindent{#3}\par\vspace{1pt}
+}
+
+% ── Reduce spacing ──
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ══════════════════════════════════════════
+\begin{document}
+
+% ── Header ──
+\begin{center}
+  {\Large\bfseries Tianshuo Han}\\[4pt]
+  (+86)\,173-3953-9195 \enspace$\mid$\enspace
+  \href{mailto:hantianshuo@iie.ac.cn}{hantianshuo@iie.ac.cn} \enspace$\mid$\enspace
+  \href{https://github.com/keymaker-arch}{github.com/keymaker-arch}
+\end{center}
+
+\vspace{-2pt}
+
+% ── Education ──
+\section{Education}
+
+\resumeentry{University of Chinese Academy of Sciences \enspace|\enspace Ph.D. Candidate}{Sep 2021 --- Jan 2027 (Expected)}
+\resumesub{Institute of Information Engineering \enspace|\enspace Direct Ph.D. Program}
+
+Focused on \textbf{Linux kernel} and \textbf{operating systems} research, with solid theoretical foundation and extensive hands-on experience in kernel internals, binary analysis, and system-level software testing. Research published at top-tier conferences including IEEE S\&P, USENIX, and ACM CCS.
+
+\vspace{6pt}
+
+\resumeentry{China Agricultural University \enspace|\enspace Undergraduate}{Sep 2017 --- Jun 2021}
+\resumesub{Biological Sciences, College of Life Sciences \enspace|\enspace Bachelor of Science}
+
+Outstanding academic performance with multiple academic scholarships. Awarded National Second Prize in the China Undergraduate Mathematical Contest in Modeling and Gold Medal in the iGEM Competition.
+
+% ── Publications ──
+\section{Publications}
+
+\pub{NetPanic: A Fuzzer-in-the-Middle Approach to Auditing the Linux Kernel Network Stack}
+{\textbf{Tianshuo Han}, Zong Cao, Zhen Dong, Xiapu Luo, Zhenyu Song, and Jian Liu}
+{47th IEEE S\&P, 2026, CCF-A}
+
+\begin{itemize}
+  \item Conducted the first systematic fuzzing-based analysis of the Linux kernel network stack. Proposed the Fuzzer-in-the-Middle architecture, achieving over 100x throughput and 400\% code coverage improvement over the state-of-the-art, discovering 15 previously unknown kernel bugs.
+  \item Independently completed the overall architecture design and implementation. Led the paper writing effort.
+\end{itemize}
+
+\vspace{4pt}
+
+\pub{CARDSHARK: Understanding and Stabilizing Linux Kernel Concurrency Bugs Against the Odds}
+{\textbf{Tianshuo Han}, Xiaorui Gong, and Jian Liu}
+{33rd USENIX Symposium, 2024, CCF-A}
+
+\begin{itemize}
+  \item Conducted the first in-depth analysis of the root causes of instability in triggering kernel concurrency bugs, and proposed a general-purpose technique that significantly improves the reproducibility and stability of concurrency bug triggering.
+  \item Independently completed the mechanism analysis, technique development, and performance evaluation. Led the paper writing effort.
+\end{itemize}
+
+\vspace{4pt}
+
+\pub{Reviving Discarded Bugs: Analyzing Previously Unanalyzable Linux Kernel Bugs Through Control Metadata Fields}
+{Hao Zhang, Jie Lu, Shaomin Chen, \textbf{Tianshuo Han}, Bolun Zhang, Jian Liu, Xiaorui Gong}
+{32nd ACM CCS, 2025, CCF-A}
+
+\begin{itemize}
+  \item Proposed a novel technique based on manipulating critical metadata fields in kernel structures, enhancing analysis capabilities in constrained scenarios and expanding the scope of analyzable kernel bugs.
+  \item Deeply involved in defining the core thesis and responding to reviewer comments. Participated in evaluation experiment design and CodeQL development.
+\end{itemize}
+
+\vspace{4pt}
+
+\pub{Whole-genome sequence and comparative analysis of Trichoderma asperellum ND-1 reveal its unique enzymatic system for efficient biomass degradation}
+{Fengzhen Zheng, \textbf{Tianshuo Han}, Abdul Basit, Junquan Liu, Ting Miao, and Wei Jiang}
+{Catalysts 12(4), 2022, IF=4.16}
+
+\begin{itemize}
+  \item Revealed the unique lignocellulose degradation enzyme system of \textit{Trichoderma asperellum} ND-1 through whole-genome sequencing and secretome analysis. Responsible for genomic data analysis and visualization.
+\end{itemize}
+
+\end{document}
