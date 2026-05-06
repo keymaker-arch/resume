@@ -3,10 +3,10 @@
 
 % ── Geometry ──
 \usepackage[
-  top=0.6in,
-  bottom=0.6in,
-  left=0.7in,
-  right=0.7in
+  top=0.46in,
+  bottom=0.38in,
+  left=0.58in,
+  right=0.58in
 ]{geometry}
 
 % ── Chinese support ──
@@ -28,12 +28,13 @@
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{tabularx}
 
 % ── Colors ──
 \definecolor{linkblue}{HTML}{0563C1}
 \definecolor{sectioncolor}{HTML}{000000}
 \definecolor{rulecolor}{HTML}{333333}
+\definecolor{entryrule}{HTML}{D8D8D8}
+\definecolor{muted}{HTML}{444444}
 
 % ── Hyperlinks ──
 \hypersetup{
@@ -47,228 +48,226 @@
 % ── No page numbers ──
 \pagestyle{empty}
 
-% ── Section style: bold uppercase with underline ──
+% ── Section style ──
 \titleformat{\section}
-  {\large\bfseries\color{sectioncolor}}
+  {\normalsize\bfseries\color{sectioncolor}}
   {}{0em}{}
-  [\vspace{-0.6em}\textcolor{rulecolor}{\rule{\textwidth}{0.8pt}}]
-\titlespacing{\section}{0pt}{12pt}{6pt}
+  [\vspace{-0.6em}\textcolor{rulecolor}{\rule{\textwidth}{0.6pt}}]
+\titlespacing{\section}{0pt}{6pt}{3pt}
 
 % ── List style ──
 \setlist[itemize]{
-  leftmargin=1.5em,
-  itemsep=1pt,
+  leftmargin=1.25em,
+  itemsep=0pt,
   parsep=0pt,
-  topsep=2pt,
+  topsep=0pt,
 }
 
 % ── Helper commands ──
 
 % Resume entry: \resumeentry{Title}{Date}
 \newcommand{\resumeentry}[2]{%
-  \noindent\textbf{#1}\hfill{#2}\par
+  \noindent\textbf{#1}\hfill #2\par\vspace{1pt}
 }
 
 % Resume sub-entry: \resumesub{Subtitle}
 \newcommand{\resumesub}[1]{%
-  \noindent{#1}\par\vspace{2pt}
+  \noindent{\color{muted}#1}\par\vspace{1pt}
 }
 
 % Publication entry: \pub{Title}{Authors}{Venue}
 \newcommand{\pub}[3]{%
   \noindent\textbf{#1}\par
-  \noindent{#2}\par
-  \noindent{#3}\par\vspace{2pt}
+  \noindent{\small #2}\par
+  \noindent{\small\color{muted}#3}\par
+}
+
+% Lightweight divider between dense resume entries.
+\newcommand{\entrydivider}{%
+  \par\vspace{1pt}
+  \noindent\textcolor{entryrule}{\rule{\textwidth}{0.3pt}}\par
+  \vspace{1pt}
 }
 
 % ── Reduce spacing ──
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
 
 % ══════════════════════════════════════════
 \begin{document}
 
 % ── Header ──
 \begin{center}
-  {\LARGE\bfseries 韩天硕}\\[6pt]
+  {\LARGE\bfseries 韩天硕}\\[3pt]
+  {\small
   (+86)\,173-3953-9195 \enspace$\mid$\enspace
   \href{mailto:hantianshuo@iie.ac.cn}{hantianshuo@iie.ac.cn} \enspace$\mid$\enspace
-  \href{https://github.com/keymaker-arch}{github.com/keymaker-arch}
+  \href{https://github.com/keymaker-arch}{github.com/keymaker-arch}}\\[4pt]
+  {\normalsize\bfseries 安全研究员 / 漏洞挖掘与利用 / Linux内核安全}
 \end{center}
 
-\vspace{-2pt}
+\vspace{-7pt}
 
 % ── 教育经历 ──
 \section{教育经历}
 
-\resumeentry{中国科学院大学\enspace|\enspace 博士研究生}{2021.09 — 2027.01（预计）}
-\resumesub{网络空间安全，信息工程研究所\enspace|\enspace 直博在读}
+\resumeentry{中国科学院大学，信息工程研究所\enspace|\enspace 网络空间安全，直博在读}{2021.09 -- 2027.01（预计）}
+\begin{itemize}
+  \item 研究方向：Linux内核安全、漏洞挖掘与利用、模糊测试、AI for Security。
+  \item 代表成果发表于IEEE S\&P、USENIX Security、ACM CCS等世界顶级安全会议。
+\end{itemize}
 
-研究专注于\textbf{Linux内核安全}，\textbf{软件安全}和\textbf{AI for security}，具备深厚的理论基础和丰富的科研与工程实践经验。研究成果发表于USENIX Security、CCS、S\&P等国际顶级安全会议。
-
-\vspace{8pt}
-
-\resumeentry{中国农业大学\enspace|\enspace 本科生}{2017.09 — 2021.06}
-\resumesub{生物科学，生命科学学院\enspace|\enspace 理学学士}
-
-学业成绩优异，多次获得学业奖学金，跨专业保送至中国科学院直接攻博；曾获全国大学生数学建模竞赛国家级一等奖、IYPT/CUPT全国青年物理学家学术竞赛华北赛区一等奖、iGEM国际基因工程机器大赛金奖等奖项。
+\resumeentry{中国农业大学，生命科学学院\enspace|\enspace 生物科学，理学学士}{2017.09 -- 2021.06}
+\begin{itemize}
+  \item 跨专业保送至中国科学院大学网络空间安全专业直博；曾获全国大学生数学建模竞赛国家级一等奖、CUPT青年物理学家竞赛华北赛区一等奖、iGEM国际基因工程机器大赛金奖。
+\end{itemize}
 
 % ── 学术成果 ──
 \section{学术成果}
 
-\pub{NetPanic: A Fuzzer-in-the-Middle Approach to Auditing the Linux Kernel Network Stack's Remote Attack Surface}
+\pub{NetPanic: The Attack Surface You Can't Syscall}
 {\textbf{Tianshuo Han}, Zong Cao, Zhen Dong, Xiapu Luo, Zhenyu Song, and Jian Liu}
 {47th IEEE S\&P, 2026, CCF-A类顶级安全会议}
 
 \begin{itemize}
-  \item \textbf{首次提出Linux内核的远程供给面，并对Linux内核网络栈的远程攻击面进行系统性的模糊测试；首次提出网络协议模糊测试的Fuzzer-in-the-Middle架构，发现15余个可远程触发Linux内核漏洞。}
-  \item 独立完成整体架构设计与实现，主导论文撰写工作。
+  \item 提出Fuzzer-in-the-Middle网络协议模糊测试架构，首次系统地测试Linux内核网络栈远程攻击面，发现\textbf{15+}个远程可触发内核漏洞。
+  \item 负责核心架构设计与实现、LibAFL定制、漏洞复现、实验评估及论文主要撰写。
 \end{itemize}
 
-\vspace{6pt}
+\entrydivider
 
 \pub{CARDSHARK: Understanding and Stabilizing Linux Kernel Concurrency Bugs Against the Odds}
 {\textbf{Tianshuo Han}, Xiaorui Gong, and Jian Liu}
-{33rd Usenix Security, 2024, CCF-A类顶级安全会议}
+{33rd USENIX Security, 2024, CCF-A类顶级安全会议}
 
 \begin{itemize}
-  \item \textbf{首次深入分析内核竞争漏洞触发不稳定性的根本机理，提出通用的内核竞争漏洞利用技术，显著提升漏洞利用的成功率和稳定性。}
-  \item 独立完成内核竞争漏洞机理分析、利用技术研发及性能评估，主导论文撰写工作。
+  \item 分析Linux内核竞争漏洞触发不稳定的根因，提出了一种通用的竞争漏洞利用技术，显著提升漏洞利用成功率和可复现性。
+  \item 负责竞争漏洞机理分析、利用技术研发、性能评估与论文主要撰写。
 \end{itemize}
 
-\vspace{6pt}
+\entrydivider
+
+\pub{Venom: Kernel Fuzzing of Distributed File Systems via Intra-Cluster Protocol Poisoning}
+{Zong Cao， \textbf{Tianshuo Han}（共同一作），等}
+{ACM CCS, 2026，CCF-A类顶级安全会议（在投）}
+
+\begin{itemize}
+  \item 提出Mutation-in-the-Middle及静态分析引导变异算法，在内核分布式文件系统发现\textbf{30+}个内核漏洞。
+  \item 负责变异算法设计与实现、实验设计、漏洞复现及结果分析。
+\end{itemize}
+
+\entrydivider
+
+\pub{Wire to Ring Zero: The Remote Kernel Attack Surface That Years of Fuzzing Never Reached}
+{\textbf{Tianshuo Han}，Zong Cao}
+{Black Hat USA，2026，顶级安全工业会议（在投）}
+
+\begin{itemize}
+  \item 从工业攻防视角梳理远程内核攻击面，提出面向Linux/Windows内核网络栈实现的中间人模糊测试方法。
+\end{itemize}
+
+\entrydivider
 
 \pub{Reviving Discarded Vulnerabilities: Exploiting Previously Unexploitable Linux Kernel Bugs Through Control Metadata Fields}
 {Hao Zhang, Jie Lu, Shaomin Chen, \textbf{Tianshuo Han}, Bolun Zhang, Jian Liu, Xiaorui Gong}
 {32nd CCS, 2025, CCF-A类顶级安全会议}
 
 \begin{itemize}
-  \item \textbf{创新性地提出基于内核结构体关键元数据字段操控的利用技术，有效提升弱漏洞原语场景下的利用能力，扩展了可利用内核漏洞的范围。}
-  \item 深度参与论文核心思路制定及审稿意见回复；参与评估实验设计与CodeQL代码开发。
+  \item 提出基于内核结构体关键元数据字段操控的利用技术，增强弱漏洞原语场景下的利用能力，扩展可利用漏洞范围。
+  \item 参与核心思路制定、评估实验设计及审稿意见回复。
 \end{itemize}
 
-\vspace{6pt}
+\entrydivider
 
-\pub{Whole-genome sequence and comparative analysis of Trichoderma asperellum ND-1 reveal its unique enzymatic system for efficient biomass degradation}
-{Fengzhen Zheng, \textbf{Tianshuo Han}, Abdul Basit, Junquan Liu, Ting Miao, and Wei Jiang}
-{Catalysts 12(4), 2022, IF=4.16}
+\noindent\textbf{Whole-genome sequence and comparative analysis of \emph{Trichoderma asperellum} ND-1}\par
+\noindent{\small Fengzhen Zheng, \textbf{Tianshuo Han}, et al. \enspace|\enspace Catalysts 12(4), 2022, IF=4.16}\par
 
 \begin{itemize}
-  \item \textbf{通过全基因组测序和分泌组分析，揭示了Trichoderma asperellum ND-1菌株独特的木质纤维素降解酶系统，为生物质高效转化提供了重要的基因组理论基础。}
-  \item 负责基因组数据深度分析及科学数据可视化工作。
+  \item 负责基因组数据分析与科学数据可视化，辅助揭示该菌株木质纤维素降解酶系统。
 \end{itemize}
 
-\pub{Venom: Kernel Fuzzing of Distributed File Systems via Intra-Cluster Protocol Poisoning}
-{Zong Cao， \textbf{Tianshuo Han}，等}
-{ACM CCS, 2026，CCF-A类顶级安全会议（在投）}
-
-\begin{itemize}
-  \item \textbf{提出\emph{节点间协议投毒（Intra-Cluster Protocol Poisoning）}这一全新的面向分布式文件系统的内核攻击面，构建了对节点间网络流量进行在途拦截与变异的模糊测试器，结合基于静态分析的污染范围量化以及协议状态同步渐进式探索策略。}
-  \item 在运行最新Linux内核的五个主流分布式文件系统（CephFS、SMB、NFS、9P等）上共发现XX个内核漏洞（堆溢出、释放后重用、空指针解引用），均可在正常用户操作下通过投毒消息触发。
-\end{itemize}
-
-\vspace{6pt}
-
-\pub{Wire to Ring Zero: The Remote Kernel Attack Surface That Years of Fuzzing Never Reached}
-{\textbf{Tianshuo Han}，Zong Cao}
-{Black Hat USA，2026，顶级安全工业会议（在投）}
+\newpage
 
 % ── 核心项目 ──
-\section{核心项目}
+\section{项目实践}
 
-\resumeentry{NetPanic --- 面向内核网络栈的新型模糊测试框架}{2023.11 - 至今}
+\resumeentry{NetPanic：面向Linux内核网络栈的FitM模糊测试框架}{2023.11 -- 至今}
 
 \begin{itemize}
-  \item 创新性地采用区别于Syzkaller的全新架构设计，专门针对内核网络栈进行优化。
-  \item 基于LibAFL框架深度定制开发，自定义和实现变异、执行、反馈、调度等核心模糊测试器组件。
-  \item 独立完成整体架构设计与实现，代码规模40K+行（Rust + C）。
-  \item 对模糊测试器设计原理具有深入理解，熟练掌握LibAFL框架核心机制。
+  \item 设计区别于Syzkaller的在途中间人模糊测试架构，面向NFS/CIFS/NFSD/ksmbd等网络路径提升远程攻击面覆盖。
+  \item 基于LibAFL深度定制变异、执行、反馈、调度等核心组件，独立完成\textbf{40K+}行Rust/C实现。
+  \item 支撑IEEE S\&P 2026论文与多项远程可触发Linux内核CVE发现。
 \end{itemize}
 
-\vspace{6pt}
+\entrydivider
 
-\resumeentry{Linux内核Rootkit高级开发}{2023.12 - 2024.5}
+\resumeentry{Venom：Mutation-in-the-Middle变异算法}{2026.03 -- 至今}
 
 \begin{itemize}
-  \item 独立设计并实现功能完整的Linux内核Rootkit，涵盖自身隐藏、端口隐藏、权限提升、文件/进程隐藏、开机自启等核心功能。
-  \item 核心设计理念：\textbf{轻量化架构}、\textbf{高隐蔽性}和\textbf{兼容性}，以最精简的代码实现完整功能，有效规避主流Rootkit检测技术，并支持自2.6至6.3全系列Linux内核版本。
+  \item 设计静态分析引导的高效变异算法，针对Fuzzer-in-the-Middle架构中的网络协议状态、消息依赖和污染传播进行优化。
+  \item 基于LibAFL与LLVM IR实现，代码规模\textbf{50K+}行（Rust/C/Python），支撑分布式文件系统漏洞发现。
 \end{itemize}
 
-\vspace{6pt}
+\entrydivider
 
-\resumeentry{Linux内核sprintf()漏洞自动化挖掘}{2022.10 - 2023.01}
+\resumeentry{自动化漏洞审计与复现Agent}{2026.03 -- 2026.04}
 
 \begin{itemize}
-  \item 基于静态分析技术，系统性挖掘Linux内核中\texttt{sprintf()}函数缓冲区长度预留不足导致的溢出漏洞。
-  \item 基于\textbf{LLVM}框架实现自动化分析工具，成功发现100余个潜在溢出点。
+  \item 基于ClaudeCode/Codex SDK构建端到端全自动安全审计Agent，覆盖漏洞发现、环境搭建、复现、PoC生成和报告撰写。
+  \item 在HTTPD、QEMU、libexif等开源项目中发现\textbf{10+}个漏洞并获得CVE。
 \end{itemize}
 
-\vspace{6pt}
-
-\resumeentry{"影子经纪人"泄露黑客工具深度逆向分析}{2022.01 - 2022.05}
+\entrydivider
+\resumeentry{Linux内核Rootkit与隐蔽机制研究}{2023.12 -- 2024.05}
 
 \begin{itemize}
-  \item 深度分析EARLYSHOVEL、ELECTRICSLIDE、EVENLESSON、TELEX等漏洞利用工具。
-  \item 逆向分析NOPEN、STOICSURGEON等后门工具，并开发相应的检测工具。
+  \item 独立实现自身隐藏、端口隐藏、权限提升、文件/进程隐藏、开机自启等核心机制，用于内核攻防技术验证。
+  \item 强调轻量化、高隐蔽性与跨版本兼容，支持Linux 2.6至6.3系列内核并规避常见Rootkit检测策略。
+\end{itemize}
+
+\entrydivider
+
+\resumeentry{类Linux内核开发}{2020.12 -- 2021.05}
+
+\begin{itemize}
+  \item 从零实现可运行的类Linux内核，覆盖引导、内存管理、进程调度、系统调用和文件系统等核心子系统；代码规模约\textbf{20K}行（C/x86汇编）。
 \end{itemize}
 
 % ── 安全贡献 ──
 \section{安全贡献}
 
-\resumeentry{CVE-2025-38501\enspace|\enspace Linux内核KSMBD远程拒绝服务漏洞}{2025.08}
+\resumeentry{Linux内核远程可触发漏洞}{5项}
 
 \begin{itemize}
-  \item 发现Linux内核KSMBD模块在处理异常TCP连接时的设计缺陷，远程攻击者可通过TCP握手耗尽连接池，导致服务不可用。
-  \item 完成漏洞根因分析、PoC开发及修复方案协助。
+  \item \textbf{CVE-2025-38089}：sunrpc空指针解引用，可远程触发内核崩溃
+  \item \textbf{CVE-2025-38051}：CIFS客户端\texttt{cifs\_fill\_dirent}释放后重用
+  \item \textbf{CVE-2025-40210}：NFSD远程COMPOUND请求内存分配失败拒绝服务
+  \item \textbf{CVE-2025-40212}：NFSD伪根文件句柄引用计数泄漏，导致UAF与拒绝服务
+  \item \textbf{CVE-2026-23220}：ksmbd SMB2请求处理无限循环远程拒绝服务
 \end{itemize}
 
-\vspace{6pt}
+\vspace{2pt}
 
-\resumeentry{CVE-2025-38089\enspace|\enspace Linux内核远程拒绝服务攻击漏洞}{2025.06}
-
-\begin{itemize}
-  \item 发现Linux NFS服务器处理恶意数据包时的空指针解引用漏洞，可导致远程内核崩溃。
-  \item 负责漏洞机理分析、PoC构造及修复流程参与。
-\end{itemize}
-
-\vspace{6pt}
-
-\resumeentry{1a4e58cce84e}{2022.09}
+\resumeentry{开源项目漏洞}{5项}
 
 \begin{itemize}
-  \item 修复Linux内核内存管理子系统中\texttt{madvise()}系统调用使用\texttt{MADV\_PAGEOUT}处理非LRU页时的Warning问题。
-  \item 参与补丁开发测试与验证工作。
-\end{itemize}
-
-% ── 教学经历 ──
-\section{教学经历}
-
-\resumeentry{《恶意软件发现与分析》课程助教\enspace|\enspace 中国科学院大学网络空间安全学院}{2023.09 - 2024.02}
-
-\begin{itemize}
-  \item 担任研究生专业课程助教，课程主要教授Windows系统下动态和静态程序分析技术在恶意软件检测与分析中的应用。
-  \item 负责课程答疑、实验作业批改和考试出题等教学辅助工作。
-  \item 协助学生掌握恶意软件分析的核心技术和方法，提升学生的实际动手能力。
+  \item \textbf{CVE-2026-28780}、\textbf{CVE-2026-34032}：暂未公开披露
+  \item \textbf{CVE-2026-40312}：ImageMagick MSL解码器XML分组解析堆越界写入（off-by-one）
+  \item \textbf{CVE-2026-40385}：libexif Nikon MakerNote 32位无符号整数溢出，导致崩溃或信息泄露
+  \item \textbf{CVE-2026-40386}：libexif Fuji/Olympus MakerNote尺寸校验整数下溢，导致崩溃或信息泄露
 \end{itemize}
 
 % ── 技术能力 ──
-\section{技术能力}
+\section{技术能力与其他}
 
 \begin{itemize}
-  \item \textbf{编程语言}： 精通\textbf{C语言}和\textbf{Rust}；熟练掌握Python、Shell、\LaTeX{}
-  \item \textbf{模糊测试}： 深度掌握LibAFL框架；熟悉AFL++、Syzkaller等主流模糊测试工具
-  \item \textbf{专业技能}： 熟悉常见Linux内核漏洞利用技术；熟练掌握二进制程序逆向和利用；熟练使用Shell、Vim、Git、GDB、IDA等开发和安全分析工具
-  \item \textbf{Agentic编程}： 熟练掌握基于大语言模型的Agentic编程方法，能够高效地进行自动化安全分析和漏洞挖掘，累计消耗ClaudeCode Token超5000\$，Codex Token超2000\$，Copilot Token超2000\$。
-\end{itemize}
-
-% ── 个人特质 ──
-\section{个人特质}
-
-\begin{itemize}
-  \item INTJ型人格，自驱力强，执行力出众，具备优秀的沟通协作能力。
-  \item 富有技术热情与创新精神，对新技术和新领域有极强的好奇心和适应能力。
-  \item 生活习惯健康，精力充沛，保持多年规律健身习惯。
-  \item 英语水平接近母语者，能够熟练阅读和撰写英文技术文档。
+  \item \textbf{内核安全}：Linux内核漏洞挖掘与利用、远程攻击面分析、Rootkit机制、二进制逆向与利用。
+  \item \textbf{安全能力}：熟练掌握网络、系统和密码等网络安全基础；熟悉LibAFL、AFL++、Syzkaller、LLVM、CodeQL等模糊测试和静态分析框架；熟练使用GDB、IDA等程序调试和逆向工具；熟练使用各种渗透测试工具。
+  \item \textbf{编程语言}：精通\textbf{C}和\textbf{Rust}；熟练掌握Python、Shell、x86汇编、\LaTeX{}，可以使用各种主流编程语言。
+  \item \textbf{AI与Harness}：熟练掌握Agentic编程工作流，可以快速完成开发任务和安全测试任务。
+  \item \textbf{教学经历}：曾任中国科学院大学《恶意软件发现与分析》课程助教；
+  \item \textbf{外语能力}：英语读写能力与母语者接近，可熟练阅读、撰写英文论文和技术文档。
 \end{itemize}
 
 \end{document}
