@@ -1,5 +1,5 @@
 % !TeX TS-program = xelatex
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 % ── Geometry ──
 \usepackage[
@@ -166,7 +166,7 @@
 % ── 教育经历 ──
 \sectionicon{\faIcon{graduation-cap}}{教育经历}
 
-\resumeentry{中国科学院大学，信息工程研究所\enspace|\enspace 网络空间安全，直博在读}{2021.09 -- 2027.01（预计）}
+\resumeentry{中国科学院大学，信息工程研究所\enspace|\enspace 网络空间安全，直博在读}{2021.09 -- 2027.06（预计）}
 \begin{itemize}
   \item 研究方向：Linux内核安全、漏洞挖掘与利用、模糊测试、AI for Security。
   \item 代表成果发表于IEEE S\&P、USENIX Security、ACM CCS等世界顶级安全会议。
@@ -222,18 +222,18 @@
 {Catalysts 12(4), 2022}
 {负责基因组数据分析与科学数据可视化，辅助揭示该菌株木质纤维素降解酶系统。}
 
-\newpage
-
 % ── 实习经历 ──
 \sectionicon{\faIcon{briefcase}}{实习经历}
 
-\resumeentry{MiniMax\enspace|\enspace 大模型算法工程师\enspace|\enspace \textcolor{rankred}{Top-Talent Offer}}{2026.06 -- 2026.09}
+\resumeentry{MiniMax\enspace|\enspace 大模型算法工程师\enspace|\enspace \textcolor{rankred}{Top-Talent}}{2026.06 -- 2026.09}
 \begin{itemize}
-  \experienceitem{大模型安全能力评测基准构建}{参与构建覆盖漏洞PoC/Exploit生成、二进制逆向与渗透测试的模型安全评测集。}
-  \experienceitem{大模型安全消融框架设计}{面向437B参数代理模型，设计后训练数据筛选与消融管线，负责安全能力数据质量评估。}
+  \experienceitem{安全能力评测集构建}{参与构建覆盖漏洞PoC/Exploit生成、二进制逆向与渗透测试的模型安全评测集。}
+  \experienceitem{安全能力消融框架设计}{面向437B参数代理模型，设计后训练数据筛选与消融管线，负责安全能力数据质量评估。}
   \experienceitem{安全预训练数据管线设计与实现}{设计并实现文件与协议格式预训练管线，参与逆向分析及CVE数据管线设计。}
-  \experienceitem{安全后训练数据管线设计与实现}{设计并实现OSS-Fuzz与syzbot后训练管线，参与CTF数据管线设计。}
+  \experienceitem{安全后训练数据管线设计与实现}{设计并实现OSS-Fuzz与Syzbot后训练管线，参与CTF数据管线设计。}
 \end{itemize}
+
+\newpage
 
 % ── 核心项目 ──
 \sectionicon{\faIcon{code}}{开源项目}
@@ -262,8 +262,6 @@
 {类Linux内核开发}{2020.12 -- 2021.05}
 {\projectkeywords{Kernel Dev}{Unix-like}{Operational}}
 {从零实现可运行的类Linux内核，覆盖引导、内存管理、进程调度、系统调用和文件系统等核心子系统；代码规模约\textbf{20K}行（C/x86汇编）。}
-
-\newpage
 
 % ── 安全贡献 ──
 \sectionicon{\faIcon{flag}}{安全贡献}
@@ -297,7 +295,7 @@
 \resumeentry{其他漏洞}{9项}
 
 \begin{itemize}
-  \item \textbf{Apache HTTPD}：\textbf{CVE-2026-28780}（mod\_proxy\_ajp AJP消息堆越界写入）、\textbf{CVE-2026-34032}（mod\_proxy\_ajp嵌入字符串解析越界读取）
+  \item \textbf{Apache HTTPD}：\textbf{CVE-2026-28780}（mod\_proxy\_ajp AJP消息堆越界写入）、\textbf{CVE-2026-34032}（嵌入字符串解析越界读取）
   \item \textbf{ImageMagick}：\textbf{CVE-2026-40312}（MSL解码器XML分组解析堆越界写入）
   \item \textbf{libexif}：\textbf{CVE-2026-40385}（Nikon MakerNote 32位无符号整数溢出）、\textbf{CVE-2026-40386}（Fuji/Olympus MakerNote尺寸校验整数下溢）
   \item \textbf{GStreamer}：\textbf{CVE-2026-53701}（H.266/VVC PPS越界写入）、\textbf{CVE-2026-53702}（H.265 SEI栈溢出）、\textbf{CVE-2026-53703}（RealMedia音频越界读取）、\textbf{CVE-2026-53704}（RealMedia FILEINFO越界读取）
