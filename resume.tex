@@ -171,8 +171,6 @@
 % ── 学术成果 ──
 \sectionicon{\faIcon{book}}{学术成果}
 
-\noindent{\small（\textbf{Bold} = 本人；左栏标注会议/期刊、等级及状态。）}\par
-
 \pubentry
 {IEEE S\&P 26}{CCF-A}{}
 {NetPanic: The Attack Surface You Can't Syscall}
@@ -218,7 +216,7 @@
 \newpage
 
 % ── 核心项目 ──
-\sectionicon{\faIcon{code}}{项目实践}
+\sectionicon{\faIcon{code}}{开源项目}
 
 \projectentry
 {NetPanic：面向Linux内核网络栈的FitM模糊测试框架}{2023.11 -- 至今}
@@ -233,7 +231,7 @@
 \projectentry
 {自动化漏洞审计与复现Agent}{2026.03 -- 2026.04}
 {\projectkeywords{Agentic}{Security Audit}{Fully-Automated}}
-{基于ClaudeCode/Codex SDK构建端到端全自动安全审计Agent，覆盖漏洞发现、环境搭建、复现、PoC生成和报告撰写；在HTTPD、QEMU、libexif等开源项目中发现\textbf{10+}个漏洞并获得CVE。}
+{基于ClaudeCode/Codex SDK构建端到端全自动安全审计Agent，覆盖漏洞发现、环境搭建、复现、PoC生成和报告撰写；在HTTPD、QEMU、GStreamer、ImageMagick、libexif等开源项目中发现\textbf{16}个漏洞并获得CVE。}
 
 \projectentry
 {Linux内核Rootkit与隐蔽机制研究}{2023.12 -- 2024.05}
@@ -260,13 +258,27 @@
 
 \vspace{2pt}
 
-\resumeentry{开源项目漏洞}{5项}
+\resumeentry{QEMU漏洞}{7项}
 
 \begin{itemize}
-  \item \textbf{CVE-2026-28780}、\textbf{CVE-2026-34032}：暂未公开披露
-  \item \textbf{CVE-2026-40312}：ImageMagick MSL解码器XML分组解析堆越界写入（off-by-one）
-  \item \textbf{CVE-2026-40385}：libexif Nikon MakerNote 32位无符号整数溢出，导致崩溃或信息泄露
-  \item \textbf{CVE-2026-40386}：libexif Fuji/Olympus MakerNote尺寸校验整数下溢，导致崩溃或信息泄露
+  \item \textbf{CVE-2026-7180}：暂未公开披露
+  \item \textbf{CVE-2026-8341}：UEFI认证头长度校验缺失，导致整数下溢
+  \item \textbf{CVE-2026-8343}：VNC扩展剪贴板长度校验错误，导致堆越界读取
+  \item \textbf{CVE-2026-8348}：9pfs扩展属性FID无限创建，导致宿主机内存耗尽
+  \item \textbf{CVE-2026-9238}：9pfs目录读取请求触发超大内存分配，导致拒绝服务
+  \item \textbf{CVE-2026-48914}：virtio-blk SCSI请求长度校验缺失，导致堆越界写入
+  \item \textbf{CVE-2026-48915}：UEFI十六进制字符串解析单字节越界写入
+\end{itemize}
+
+\vspace{2pt}
+
+\resumeentry{其他漏洞}{9项}
+
+\begin{itemize}
+  \item \textbf{Apache HTTPD}：\textbf{CVE-2026-28780}（mod\_proxy\_ajp AJP消息堆越界写入）、\textbf{CVE-2026-34032}（mod\_proxy\_ajp嵌入字符串解析越界读取）
+  \item \textbf{ImageMagick}：\textbf{CVE-2026-40312}（MSL解码器XML分组解析堆越界写入）
+  \item \textbf{libexif}：\textbf{CVE-2026-40385}（Nikon MakerNote 32位无符号整数溢出）、\textbf{CVE-2026-40386}（Fuji/Olympus MakerNote尺寸校验整数下溢）
+  \item \textbf{GStreamer}：\textbf{CVE-2026-53701}（H.266/VVC PPS越界写入）、\textbf{CVE-2026-53702}（H.265 SEI栈溢出）、\textbf{CVE-2026-53703}（RealMedia音频越界读取）、\textbf{CVE-2026-53704}（RealMedia FILEINFO越界读取）
 \end{itemize}
 
 % ── 教学与社区贡献 ──
@@ -274,7 +286,7 @@
 
 \begin{itemize}
   \item 2023年中国科学院大学《恶意软件发现与分析》课程助教
-  \item 2026年ISSTA审稿人
+  \item 2026年ISSTA子审稿人
 \end{itemize}
 
 % ── 技术能力 ──
